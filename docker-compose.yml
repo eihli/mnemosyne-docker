@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  mnemosyne:
+    image: mnemosyne
+    ports:
+      - 127.0.0.1:8512:8512
+      - 127.0.0.1:8513:8513
+    volumes:
+      - ./data:/root/.local/share/mnemosyne
+    command: ["mnemosyne", "--web-server", "--sync-server"]
